@@ -1,0 +1,15 @@
+select 
+dep.indicator As Symptoms,
+dep.state As Country,
+dep.`group` AS `Group`,
+dep.subgroup AS Subgroup,
+hel.indicator AS Type_of_insurance,
+choice.indicator AS Perscription_or_Therapy,
+dep.time_period_start_date AS `Time_Period`
+
+
+from depression_symptoms dep
+JOIN health_insurance hel on dep.subgroup = hel.subgroup
+JOIN choice_of_medical_care choice on dep.`time_period` = choice.`time period`
+
+
